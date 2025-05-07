@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mohammad Alam Khan - Web Developer Portfolio">
+    <meta name="keywords" content="Web Developer, Portfolio, HTML, CSS, JS, PHP, Tailwind, Responsive Design">
+    <link rel="icon" href="geek.png" type="image/x-icon">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        };
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        html::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: #6366f1;
+            border-radius: 10px;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #6366f1;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #6366f1, #8b5cf6, #ec4899, #06b6d4);
+            background-size: 400% 400%;
+            z-index: -1;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.08;
+            /* Soft, ambient effect */
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <!-- Toggle Button with Icon -->
+    <div class="flex justify-end p-4">
+        <button id="theme-toggle" class="text-2xl p-2 rounded-full border dark:border-gray-700 transition-all">
+            <span id="theme-icon" class="transition-all">🌞</span>
+        </button>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-4" data-aos="fade-up"
+        data-aos-delay="200">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 transition duration-500">
+            <span class="inline-flex items-center">
+                Hey<img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" alt="Waving hand"
+                    class="w-20 h-20 mr-2" />, I'm <span class="text-indigo-600 dark:text-indigo-300">&nbsp;Mohammad
+                    Alam
+                    Khan</span>
+            </span>
+        </h1>
+        <p class="text-lg md:text-xl max-w-2xl">I craft clean, responsive websites that speak louder than words. Welcome
+            to the zone where design meets code.</p>
+        <a href="#projects"
+            class="mt-6 inline-block bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition duration-300 transform hover:scale-105 flex items-center">
+            View My Work
+            <svg class="w-5 h-5 ml-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+        </a>
+
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto" data-aos="fade-right">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+
+            <!-- Optional Image -->
+            <div class="md:col-span-1 flex justify-center">
+                <img src="Avtar.png" alt="Your Photo"
+                    class="w-40 h-40 md:w-150 md:h-150 rounded-full object-cover shadow-lg" />
+            </div>
+
+            <!-- About Text -->
+            <div class="md:col-span-2 text-light-900">
+                <h2 class="text-4xl font-bold mb-4">About Me</h2>
+                <p class="text-lg leading-relaxed">
+                    I’m a passionate <span class="font-semibold text-red-700">web developer</span> who transforms ideas
+                    into elegant,
+                    responsive websites and applications. I specialize in <span class="font-semibold">clean UI</span>,
+                    smooth user experiences,
+                    and performance-focused builds.
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    Always evolving, I stay on the edge of innovation—learning, creating, and growing through every
+                    project. Whether you're building a personal brand or launching a product, I bring clarity,
+                    creativity, and code to the table.
+                </p>
+                <p class="mt-6 text-indigo-400 font-medium text-lg">Let’s build something meaningful together.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-4">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-bold mb-2">Softvault (E-commerce Website)</h3>
+                <p> <span class="text-indigo-600 dark:text-yellow-400">Technologies Used: WordPress,
+                        WooCommerce,Elementor, MySQL </span> <br><br>
+                    Developed Softvault, a fully functional e-commerce website using WordPress
+                    and WooCommerce, enabling businesses to showcase and sell products
+                    online. The platform features a clean and responsive design with secure
+                    payment gateway integration, product categories, and an easy checkout
+                    process</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-bold mb-2">TimesMirror (News Portal)</h3>
+                <p> <span class="text-indigo-600 dark:text-yellow-400">Technologies Used: WordPress, Elementor,
+                        MySQL</span> <br><br>
+                    Built TimesMirror, a dynamic news portal website that allows real-time
+                    publishing of news articles in various categories like Politics, Sports, and
+                    Technology. Designed a responsive layout using Elementor and optimized
+                    the website for SEO to increase search visibility.</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-bold mb-2">Employee Task Management System (Desktop Application)</h3>
+                <p> <span class="text-indigo-600 dark:text-yellow-400">Technologies Used: PHP, MySQL, Visual Studio Code
+                    </span> <br><br> The Employee Task Management System is a desktop-based application
+                    developed to manage and track employee tasks and records within an
+                    organization. It helps organizations efficiently assign, monitor, and track the
+                    progress of employee tasks. The system also provides detailed insights into
+                    employee performance based on task completion</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-bold mb-2">Movie Ticket Booking System </h3>
+                <p> <span class="text-indigo-600 dark:text-yellow-400"> Technologies Used: Python, Flask, SQLite/MySQL
+                    </span> <br><br> The Movie Ticket Booking System is a web-based application designed to simplify the
+                    process of booking movie tickets online. The system contains two major modules: the
+                    Admin Panel and the User Panel. The Admin Panel allows administrators to add
+                    movies, schedule timings, and track the number of tickets sold. The User Panel allows
+                    users to browse available movies, select show timings, and book seats as per their
+                    preference</p>
+            </div>
+
+            <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition"
+                data-aos="zoom-in">
+                <h3 class="text-xl font-bold mb-2"> Placement Cell Portal </h3>
+                <p> <span class="text-indigo-600 dark:text-yellow-400"> Technologies Used: HTML, CSS, JavaScript, PHP,
+                        MySQL
+                    </span> <br><br> T The Placement Cell Portal is a web-based platform designed to streamline the
+                    campus recruitment process between students and the placement
+                    department. It allows students to register, enroll in job drives, and get real
+                    time updates about recruitment activities. The portal also includes an admin
+                    panel that enables the placement team to manage student profiles, job drives,
+                    and company details</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 px-4 max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-4">Stats</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
+            <div>
+                <p class="text-4xl font-bold counter" data-target="06">0</p>
+                <p class="text-sm mt-2">Projects</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold counter" data-target="5">0</p>
+                <p class="text-sm mt-2">Clients</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold counter" data-target="2">0</p>
+                <p class="text-sm mt-2">Years Experience</p>
+            </div>
+            <div>
+                <p class="text-4xl font-bold counter" data-target="5">0</p>
+                <p class="text-sm mt-2">Certifications</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 max-w-6xl mx-auto" data-aos="fade-left">
+        <h2 class="text-3xl font-semibold mb-10 text-center">Skills</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+            <!-- Skill Card -->
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">💻</p>
+                <p class="font-medium">HTML</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🎨</p>
+                <p class="font-medium">CSS</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">⚙️</p>
+                <p class="font-medium">JavaScript</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🌬️</p>
+                <p class="font-medium">Tailwind CSS</p>
+            </div>
+            <!--div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+        <p class="text-4xl mb-2">⚛️</p>
+        <p class="font-medium">React</p>
+      </div-->
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🐘</p>
+                <p class="font-medium">PHP</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🗃️</p>
+                <p class="font-medium">MySQL</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🐙</p>
+                <p class="font-medium">Git</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">🌐</p>
+                <p class="font-medium">Networking</p>
+            </div>
+            <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+                <p class="text-4xl mb-2">📝</p>
+                <p class="font-medium">WordPress</p>
+            </div>
+            <!--div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg shadow hover:shadow-lg transition text-center">
+        <p class="text-4xl mb-2">🔥</p>
+        <p class="font-medium">Firebase</p>
+      </div-->
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 max-w-6xl mx-auto" data-aos="fade-up">
+        <h2 class="text-3xl font-semibold mb-10 text-center">Get In Touch</h2>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+
+            <!-- Left Info -->
+            <div class="space-y-4">
+                <p class="text-lg">Let's build something awesome together. I'm open for freelance opportunities,
+                    collaborations, or just a quick tech talk.</p>
+                <div class="flex items-center space-x-3">
+                    <span class="text-indigo-600 dark:text-indigo-400 text-xl">📧</span>
+                    <a href="mailto:maalam.khann@gmail.com"
+                        class="text-indigo-600 dark:text-indigo-400 hover:underline">maalam.khann@gmail.com</a>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-indigo-600 dark:text-indigo-400 text-xl">🌍</span>
+                    <p>Lucknow, India</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <span class="text-indigo-600 dark:text-indigo-400 text-xl">📞</span>
+                    <p>+91 7800961949 </p>
+                </div>
+            </div>
+
+            <!-- Right Form -->
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+                <div>
+                    <label class="block mb-1 text-sm font-medium">Name</label>
+                    <input type="text" name="name"
+                        class="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="Your Name" required>
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm font-medium">Email</label>
+                    <input type="email" name="email"
+                        class="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="you@example.com" required>
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm font-medium">Message</label>
+                    <textarea name="message" rows="4"
+                        class="w-full px-4 py-2 rounded-md bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="Your message..." required></textarea>
+                </div>
+
+                <!-- Web3Form Access Key -->
+                <input type="hidden" name="access_key" value="01677ff8-d80b-460c-9045-6ed34f5bd8c5">
+
+                <button type="submit"
+                    class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition">Send
+                    Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success/Error Message -->
+    <div id="form-message" class="hidden text-center mt-6">
+        <p id="form-feedback" class="text-sm font-medium"></p>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center py-6 border-t mt-10 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-sm">
+        <p>&copy; 2025 Mohammad Alam Khan || Developed with 🧠 Crafted with ☕ = 💻✨ </p>
+    </footer>
+
+    <!-- Floating Contact Button -->
+    <a href="#contact" class="floating-button">Contact</a>
+
+    <!-- Dark Mode Script with Icon Change -->
+    <script>
+        const toggle = document.getElementById('theme-toggle');
+        const icon = document.getElementById('theme-icon');
+
+        toggle.addEventListener('click', () => {
+            const html = document.documentElement;
+            html.classList.toggle('dark');
+
+            if (html.classList.contains('dark')) {
+                icon.textContent = '🌙';
+            } else {
+                icon.textContent = '🌞';
+            }
+        });
+
+        // Optional: Auto set based on system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.classList.add('light');
+            icon.textContent = '🌞';
+        }
+    </script>
+
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+
+    <!-- Counter Animation Script -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / 100;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 30);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    </script>
+
+    <script>
+        const form = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        const messageText = document.getElementById('form-feedback');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.json())
+                .then(data => {
+                    messageText.classList.remove('text-green-500', 'text-red-500');
+
+                    if (data.success) {
+                        form.reset();
+                        messageText.classList.add('text-green-500');
+                        messageText.textContent = "Your message has been sent successfully!";
+                    } else {
+                        messageText.classList.add('text-red-500');
+                        messageText.textContent = "Something went wrong. Please try again later.";
+                    }
+
+                    formMessage.classList.remove('hidden');
+                })
+                .catch(error => {
+                    messageText.classList.remove('text-green-500');
+                    messageText.classList.add('text-red-500');
+                    messageText.textContent = "Something went wrong. Please try again later.";
+                    formMessage.classList.remove('hidden');
+                });
+
+        });
+
+
+    </script>
+</body>
+
+</html>
